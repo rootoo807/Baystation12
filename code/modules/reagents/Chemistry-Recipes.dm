@@ -2643,7 +2643,7 @@
 /datum/chemical_reaction/alexander
 	name = "Alexander"
 	result = /datum/reagent/ethanol/alexander
-	required_reagents = list(/datum/reagent/ethanol/creme_de_cacao = 1, /datum/reagent/ethanol/cognac = 1, /datum/reagent/drink/milk/cream = 1)
+	required_reagents = list(/datum/reagent/ethanol/creme_de_menthe = 1, /datum/reagent/ethanol/cognac = 1, /datum/reagent/drink/milk/cream = 1)
 	result_amount = 3
 
 /datum/chemical_reaction/between_the_sheets
@@ -2776,7 +2776,7 @@
 	mix_message = "The water dilutes into delicious looking milk"
 
 /datum/chemical_reaction/pinacolada
-	name = "Pina Colada"
+	name = "Pino Colada"
 	result = /datum/reagent/ethanol/pinacolada
 	required_reagents = list(/datum/reagent/drink/coconut/milk = 1, /datum/reagent/ethanol/rum = 2, /datum/reagent/drink/juice/pineapple = 1)
 	result_amount = 4
@@ -2799,8 +2799,8 @@
 /datum/chemical_reaction/orange_soda
 	name = "Fizzy Orange"
 	result = /datum/reagent/drink/orange_soda
-	required_reagents = list(/datum/reagent/drink/sodawater = 2, /datum/reagent/drink/juice/orange = 1, /datum/reagent/sugar = 1)
-	result_amount = 4
+	required_reagents = list(/datum/reagent/drink/sodawater = 2, /datum/reagent/drink/juice/orange = 1)
+	result_amount = 3
 	mix_message = "The liquid blends together smoothly"
 
 /datum/chemical_reaction/pork_soda
@@ -2985,7 +2985,7 @@
 /datum/chemical_reaction/frappe
 	name = "Iced Frappe"
 	result = /datum/reagent/drink/coffee/iced/frappe
-	required_reagents = list(/datum/reagent/drink/coffee/icecoffee = 3, /datum/reagent/sugar = 1)
+	required_reagents = list(/datum/reagent/drink/coffee = 2, /datum/reagent/drink/ice = 1, /datum/reagent/sugar = 1)
 	result_amount = 4
 	minimum_temperature = (0 CELSIUS) - 100
 	maximum_temperature = 0 CELSIUS
