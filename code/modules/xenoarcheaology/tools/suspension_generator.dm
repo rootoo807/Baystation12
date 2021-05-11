@@ -14,7 +14,6 @@
 
 /obj/machinery/suspension_gen/Process()
 	if(suspension_field)
-		updateDialog()
 		if(stat & NOPOWER)
 			deactivate()
 			return
@@ -36,7 +35,6 @@
 			I.forceMove(suspension_field)
 
 /obj/machinery/suspension_gen/interact(var/mob/user)
-	user.set_machine(src)
 	var/dat = "<b>Multi-phase mobile suspension field generator MK II \"Steadfast\"</b><br>"
 	var/obj/item/cell/cell = get_cell()
 	if(cell)
@@ -52,11 +50,9 @@
 	dat += "<b><A href='?src=\ref[src];toggle_field=1'>[suspension_field ? "Disable" : "Enable"] field</a></b><br>"
 	dat += "<hr>"
 	dat += "<hr>"
-	dat += "<font style='color: cyan;'><b>Always wear safety gear and consult a field manual before operation.</b></font><br>"
+	dat += "<font color='blue'><b>Always wear safety gear and consult a field manual before operation.</b></font><br>"
 	dat += "<A href='?src=\ref[src];close=1'>Close console</A>"
-	var/datum/browser/popup = new(user, "suspension", "Suspension Generator", 500, 400)
-	popup.set_content(dat)
-	popup.open()
+	show_browser(user, dat, "window=suspension;size=500x400")
 	onclose(user, "suspension")
 
 /obj/machinery/suspension_gen/OnTopic(var/mob/user, href_list)

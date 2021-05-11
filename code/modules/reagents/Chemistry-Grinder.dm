@@ -130,7 +130,7 @@
 		else if (user.unEquip(I, src))
 			container = I
 			update_icon()
-			updateDialog()
+			updateUsrDialog()
 
 	else if (is_type_in_list(I, storage_types))
 		var/obj/item/storage/S = I
@@ -157,7 +157,7 @@
 					"\The [user] empties things from \the [S] into \the [src].",
 					"You empty [english_list(removed)] from \the [S] into \the [src][full ? ", filling it to capacity" : ""]."
 				)
-				updateDialog()
+				updateUsrDialog()
 			else
 				to_chat(user, SPAN_WARNING("Nothing more in \the [S] will go into \the [src]."))
 
@@ -210,9 +210,7 @@
 				window += "<br>[R.volume] - [R.name]"
 
 	window = strip_improper("<head><title>[name]</title></head><tt>[JOINTEXT(window)]</tt>")
-	var/datum/browser/popup = new(user, "reagentgrinder", "Reagent Grinder")
-	popup.set_content(window)
-	popup.open()
+	show_browser(user, window, "window=reagentgrinder")
 	onclose(user, "reagentgrinder")
 
 

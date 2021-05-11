@@ -91,7 +91,7 @@
 		return TOPIC_NOACTION
 
 	if(href_list["show_preferences"])
-		client.prefs.open_setup_window(src)
+		client.prefs.ShowChoices(src)
 		return 1
 
 	if(href_list["ready"])

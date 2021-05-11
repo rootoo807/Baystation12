@@ -16,7 +16,6 @@
 	var/datum/wires/connected = null
 	var/datum/radio_frequency/radio_connection
 	var/deadman = 0
-	var/obj/machinery/atmospherics/pipe/cap/sparker/mholder
 
 /obj/item/device/assembly/signaler/New()
 	..()
@@ -118,8 +117,6 @@
 		connected.Pulse(src)
 	else if(holder)
 		holder.process_activation(src, 1, 0)
-	else if(mholder)
-		mholder.process_activation()
 	else
 		..(radio)
 	return 1

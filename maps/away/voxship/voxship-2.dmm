@@ -1244,9 +1244,7 @@
 /area/voxship/thrusters)
 "cQ" = (
 /obj/machinery/atmospherics/pipe/simple/heat_exchanging,
-/obj/machinery/igniter{
-	id_tag = "Voxship_igniter"
-	},
+/obj/machinery/igniter,
 /turf/simulated/floor/reinforced/airless,
 /area/voxship/thrusters)
 "cR" = (
@@ -1538,7 +1536,7 @@
 /turf/simulated/floor/reinforced/airless,
 /area/voxship/thrusters)
 "dq" = (
-/obj/machinery/computer/ship/sensors/vox{
+/obj/machinery/computer/ship/sensors{
 	dir = 1;
 	icon_state = "computer"
 	},
@@ -2154,10 +2152,6 @@
 /obj/machinery/atmospherics/omni/mixer,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
-	},
-/obj/machinery/button/ignition{
-	id_tag = "Voxship_igniter";
-	pixel_y = -25
 	},
 /turf/simulated/floor/tiled/techmaint/vox,
 /area/voxship/thrusters)
@@ -3095,7 +3089,7 @@
 /turf/simulated/floor/tiled/techmaint/vox,
 /area/voxship/shuttle)
 "ha" = (
-/obj/machinery/computer/ship/sensors/vox{
+/obj/machinery/computer/ship/sensors{
 	dir = 1;
 	icon_state = "computer"
 	},

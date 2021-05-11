@@ -11755,10 +11755,6 @@
 /obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/maintenance/fifthdeck/aftstarboard)
-"Ct" = (
-/obj/random_multi/single_item/piano,
-/turf/simulated/floor/plating,
-/area/vacant/bar)
 "Cy" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -39864,7 +39860,7 @@ aa
 aa
 Xi
 QL
-Ct
+yI
 Ne
 Lj
 zL

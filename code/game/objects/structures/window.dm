@@ -7,7 +7,7 @@
 
 	layer = SIDE_WINDOW_LAYER
 	anchored = TRUE
-	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CAN_BE_PAINTED | ATOM_FLAG_CHECKS_BORDER
+	atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_CAN_BE_PAINTED
 	obj_flags = OBJ_FLAG_ROTATABLE
 	alpha = 180
 	var/material/reinf_material
@@ -302,18 +302,14 @@
 			playsound(loc, 'sound/items/Screwdriver.ogg', 75, 1)
 			to_chat(user, (construction_state == 1 ? "<span class='notice'>You have unfastened the window from the frame.</span>" : "<span class='notice'>You have fastened the window to the frame.</span>"))
 		else if(reinf_material && construction_state == 0)
-			if(!can_install_here(user))
-				return
 			set_anchored(!anchored)
 			playsound(loc, 'sound/items/Screwdriver.ogg', 75, 1)
 			to_chat(user, (anchored ? "<span class='notice'>You have fastened the frame to the floor.</span>" : "<span class='notice'>You have unfastened the frame from the floor.</span>"))
-		else
-			if(!can_install_here(user))
-				return
+		else if(!reinf_material)
 			set_anchored(!anchored)
 			playsound(loc, 'sound/items/Screwdriver.ogg', 75, 1)
 			to_chat(user, (anchored ? "<span class='notice'>You have fastened the window to the floor.</span>" : "<span class='notice'>You have unfastened the window.</span>"))
-	else if(isCrowbar(W) && reinf_material && construction_state <= 1 && anchored)
+	else if(isCrowbar(W) && reinf_material && construction_state <= 1)
 		construction_state = 1 - construction_state
 		playsound(loc, 'sound/items/Crowbar.ogg', 75, 1)
 		to_chat(user, (construction_state ? "<span class='notice'>You have pried the window into the frame.</span>" : "<span class='notice'>You have pried the window out of the frame.</span>"))
@@ -467,15 +463,8 @@
 		to_chat(user, SPAN_NOTICE("\The [src] is secured to the floor!"))
 		return
 
-	var/newdir=turn(dir, 90)
-	if(!is_fulltile())
-		for(var/obj/structure/window/W in loc)
-			if(W.dir == newdir)
-				to_chat(user, SPAN_NOTICE("There's already a window facing that direction here!"))
-				return
-
 	update_nearby_tiles(need_rebuild=1) //Compel updates before
-	set_dir(newdir)
+	set_dir(turn(dir, 90))
 	update_nearby_tiles(need_rebuild=1)
 
 /obj/structure/window/Move()
@@ -663,16 +652,6 @@
 /obj/structure/window/proc/is_on_frame()
 	if(locate(/obj/structure/wall_frame) in loc)
 		return TRUE
-
-/obj/structure/window/proc/can_install_here(var/mob/user)
-	//only care about full tile. Border can be installed anywhere
-	if(!anchored && is_fulltile())
-		for(var/obj/O in loc)
-			if((O != src) && O.density && !(O.atom_flags & ATOM_FLAG_CHECKS_BORDER) \
-			&& !(istype(O, /obj/structure/wall_frame) || istype(O, /obj/structure/grille)))
-				to_chat(user, SPAN_NOTICE("There isn't enough space to install \the [src]."))
-				return FALSE
-	return TRUE
 
 /obj/machinery/button/windowtint
 	name = "window tint control"

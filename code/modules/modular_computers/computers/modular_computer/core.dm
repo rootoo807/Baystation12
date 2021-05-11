@@ -3,8 +3,6 @@
 		last_power_usage = 0
 		return 0
 
-	handle_power() // Handles all power interaction
-
 	if(damage > broken_damage)
 		shutdown_computer()
 		return 0

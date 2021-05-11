@@ -1473,10 +1473,6 @@
 /obj/effect/catwalk_plated/ascent,
 /turf/simulated/floor/ascent,
 /area/ship/ascent_caulship)
-"Xe" = (
-/obj/effect/catwalk_plated/ascent,
-/turf/simulated/floor/ascent,
-/area/ship/ascent_caulship)
 
 (1,1,1) = {"
 aa
@@ -21175,7 +21171,7 @@ bl
 cu
 bq
 bu
-Xe
+az
 cO
 ab
 ax
@@ -21377,7 +21373,7 @@ bO
 bm
 br
 bv
-Xe
+az
 cR
 cS
 cT
@@ -21579,7 +21575,7 @@ bh
 bn
 bs
 bw
-Xe
+az
 cC
 ab
 ax

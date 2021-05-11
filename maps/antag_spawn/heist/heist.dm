@@ -22,7 +22,6 @@
 	home_waypoint = "nav_skipjack_start"
 	arrival_message = "Attention, vessel detected entering vessel proximity."
 	departure_message = "Attention, vessel detected leaving vessel proximity."
-	ceiling_type = /turf/simulated/floor/shuttle_ceiling/heist
 
 /obj/effect/shuttle_landmark/skipjack/start
 	name = "Raider Outpost"
@@ -56,6 +55,3 @@
 	requires_power = 0
 	dynamic_lighting = 0
 	req_access = list(access_syndicate)
-
-/turf/simulated/floor/shuttle_ceiling/heist
-	color = COLOR_DARK_BROWN

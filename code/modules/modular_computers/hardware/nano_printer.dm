@@ -9,12 +9,10 @@
 	var/stored_paper = 50
 	var/max_paper = 50
 	var/last_print
-	var/print_language = LANGUAGE_HUMAN_EURO
 
 /obj/item/stock_parts/computer/nano_printer/diagnostics()
 	. = ..()
 	. += "Paper buffer level: [stored_paper]/[max_paper]"
-	. += "Printer language: [print_language]"
 
 /obj/item/stock_parts/computer/nano_printer/proc/print_text(var/text_to_print, var/paper_title = null, var/paper_type = /obj/item/paper, var/list/md = null)
 	if(printer_ready())
@@ -23,7 +21,7 @@
 		if(damage > damage_malfunction)
 			text_to_print = stars(text_to_print, 100-malfunction_probability)
 		var/turf/T = get_turf(src)
-		new paper_type(T, text_to_print, paper_title, md, print_language)
+		new paper_type(T,text_to_print, paper_title, md)
 		stored_paper--
 		playsound(T, "sound/machines/dotprinter.ogg", 30)
 		T.visible_message("<span class='notice'>\The [src] prints out a paper.</span>")
