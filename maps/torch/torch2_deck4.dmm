@@ -835,6 +835,11 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/steel_grid,
 /area/janitor)
+"cT" = (
+/obj/effect/floor_decal/industrial/outline/yellow,
+/obj/random_multi/single_item/piano,
+/turf/simulated/floor/tiled,
+/area/crew_quarters/commissary)
 "cU" = (
 /obj/structure/catwalk,
 /obj/effect/floor_decal/industrial/warning/corner,
@@ -10985,10 +10990,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/fourthdeck/forestarboard)
-"Lv" = (
-/obj/effect/shuttle_landmark/ascent_caulship/torch,
-/turf/space,
-/area/space)
 "Lw" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -29393,7 +29394,7 @@ PM
 LZ
 Ku
 RZ
-Wc
+cT
 Ct
 Oh
 vF
@@ -40880,7 +40881,7 @@ aa
 aa
 aa
 aa
-Lv
+aa
 aa
 aa
 aa
