@@ -55,6 +55,28 @@
 	use_to_pickup = TRUE
 
 
+/obj/item/storage/xeno
+	name = "xenobiological satchel"
+	desc = "A bag for the storage and transport of hazardous xenobiological materials."
+	icon = 'icons/obj/chemical.dmi'
+	icon_state = "xenobag"
+	slot_flags = SLOT_BELT
+	max_storage_space = 100
+	max_w_class = ITEM_SIZE_NORMAL
+	w_class = ITEM_SIZE_NORMAL
+	can_hold = list(
+		/obj/item/slime_extract,
+		/obj/item/reagent_containers/food/snacks/monkeycube,
+		/obj/item/reagent_containers/dropper,
+		/obj/item/reagent_containers/glass/beaker,
+		/obj/item/reagent_containers/glass/bottle,
+		/obj/item/reagent_containers/syringe
+	)
+	allow_quick_gather = TRUE
+	allow_quick_empty = TRUE
+	use_to_pickup = TRUE
+
+
 /obj/item/storage/sheetsnatcher
 	name = "sheet snatcher"
 	icon = 'icons/obj/mining.dmi'
