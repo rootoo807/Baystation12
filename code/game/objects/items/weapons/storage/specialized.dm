@@ -62,7 +62,7 @@
 	icon_state = "xenobag"
 	slot_flags = SLOT_BELT
 	max_storage_space = 100
-	max_w_class = ITEM_SIZE_NORMAL
+	max_w_class = ITEM_SIZE_SMALL
 	w_class = ITEM_SIZE_NORMAL
 	can_hold = list(
 		/obj/item/slime_extract,

@@ -25,6 +25,7 @@
 		Uses = 3
 		enhanced = 1
 		qdel(O)
+	..()
 
 /obj/item/slime_extract/New()
 	GLOB.extracted_slime_cores_amount += 1
