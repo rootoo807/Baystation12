@@ -12,11 +12,8 @@
 	filling_color = "#dedeab"
 	center_of_mass = "x=16;y=10"
 	bitesize = 3
-	nutriment_amt = 2
-	nutriment_desc = list(
-		"heartiness" = 1,
-		"dough" = 2
-	)
+	additional_reagents = list(/datum/reagent/nutriment = 2)
+	additional_reagents_data = list(/datum/reagent/nutriment = list("heartiness" = 1, "dough" = 2))
 
 	/// Whether the donk pocket is currently hot. Hot donk pockets have additional reagents
 	var/is_hot = FALSE
@@ -174,11 +171,8 @@
 	desc = "A \"premium\" shelf-stable turnover. Possibly contains \"real\" fruit paste. Crush the packaging to cook it on the go!"
 	filling_color = "#6d6d00"
 	can_self_heat = TRUE
-	nutriment_amt = 4
-	nutriment_desc = list(
-		"nutritious goodness" = 1,
-		"flaky pastry" = 2
-	)
+	additional_reagents = list(/datum/reagent/nutriment = 4)
+	additional_reagents_data = list(/datum/reagent/nutriment = list("nutritious goodness" = 1, "flaky pastry" = 2))
 	hot_reagents = list(
 		/datum/reagent/drink/doctor_delight = 4,
 		/datum/reagent/hyperzine = 0.5,

@@ -166,8 +166,8 @@
 	icon_state = "checker_black"
 	w_class = ITEM_SIZE_TINY
 	center_of_mass = "x=16;y=16"
-	nutriment_desc = list("a choking hazard" = 4)
-	nutriment_amt = 1
+	default_reagents = list(/datum/reagent/nutriment = 1)
+	default_reagents_data = list(/datum/reagent/nutriment = list("a choking hazard" = 1))
 	var/piece_color ="black"
 
 /obj/item/reagent_containers/food/snacks/checker/New()

@@ -89,7 +89,7 @@
 				broken = 0 // Fix it!
 				dirtiness = 0 // just to be sure
 				update_icon()
-				atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_OPEN_CONTAINER
+				atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_OPEN_CONTAINER | ATOM_FLAG_OPEN_CONTAINER
 			return TRUE
 
 		// Otherwise, we can't add anything to the micrwoave
@@ -119,7 +119,7 @@
 				dirtiness = 0 // It's clean!
 				broken = 0 // just to be sure
 				update_icon()
-				atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_OPEN_CONTAINER
+				atom_flags = ATOM_FLAG_NO_TEMP_CHANGE | ATOM_FLAG_OPEN_CONTAINER | ATOM_FLAG_OPEN_CONTAINER
 			return TRUE
 
 		// Otherwise, bad luck!
@@ -459,4 +459,4 @@
 			if (reagent.type == /datum/reagent/frostoil)
 				display_name = "Coldsauce"
 			dat += "<b>[display_name]:</b> [reagent.volume] unit\s"
-		to_chat(user, jointext(dat, null))
+		to_chat(user, jointext(dat, "<br>"))

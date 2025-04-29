@@ -40,7 +40,7 @@
 	contents_allowed = list(/obj/item/reagent_containers/food/snacks/donut)
 	foldable = /obj/item/stack/material/cardboard
 
-	startswith = list(/obj/item/reagent_containers/food/snacks/donut/normal = 6)
+	startswith = list(/obj/random/donut = 6)
 
 /obj/item/storage/box/donut/on_update_icon()
 	ClearOverlays()

@@ -346,7 +346,7 @@
 	mutants = list("reishi","amanita","plumphelmet")
 	chems = list(/datum/reagent/nutriment = list(1,25))
 	splat_type = /obj/vine
-	kitchen_tag = "mushroom"
+	kitchen_tag = "chanterelle"
 
 /datum/seed/mushroom/New()
 	..()
@@ -367,6 +367,7 @@
 	seed_name = "brown mold"
 	display_name = "brown mold"
 	mutants = null
+	kitchen_tag = null
 
 /datum/seed/mushroom/mold/New()
 	..()
@@ -420,6 +421,7 @@
 	display_name = "reishi cluster"
 	mutants = list("libertycap","glowshroom")
 	chems = list(/datum/reagent/nutriment = list(1,50), /datum/reagent/drugs/psilocybin = list(3,5))
+	kitchen_tag = null
 
 /datum/seed/mushroom/hallucinogenic/New()
 	..()
@@ -454,6 +456,7 @@
 	display_name = "fly amanita cluster"
 	mutants = list("destroyingangel","plastic")
 	chems = list(/datum/reagent/nutriment = list(1), /datum/reagent/toxin/amatoxin = list(3,3), /datum/reagent/drugs/psilocybin = list(1,25))
+	kitchen_tag = null
 
 /datum/seed/mushroom/poison/New()
 	..()
@@ -505,6 +508,7 @@
 	display_name = "glowshroom cluster"
 	mutants = null
 	chems = list(/datum/reagent/radium = list(1,20))
+	kitchen_tag = null
 
 /datum/seed/mushroom/glowshroom/New()
 	..()
@@ -525,6 +529,7 @@
 	display_name = "plastellium cluster"
 	mutants = null
 	chems = list(/datum/reagent/toxin/plasticide = list(1,10))
+	kitchen_tag = null
 
 /datum/seed/mushroom/plastic/New()
 	..()

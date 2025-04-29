@@ -24,9 +24,9 @@
 	if(length(O.reagents.reagent_list) == 0)
 		return list("No active chemical agents found in [O].")
 	. = list("Chemicals found in [O]:")
-	var/one_percent = O.reagents.total_volume / 100
+	//var/one_percent = O.reagents.total_volume / 100
 	for (var/datum/reagent/R in O.reagents.reagent_list)
-		. += "[R][details ? ": [R.volume / one_percent]%" : ""]"
+		. += "[R][details ? ": [R.volume] unit(s)" : ""]"
 
 /obj/item/device/scanner/reagent/adv
 	name = "advanced reagent scanner"

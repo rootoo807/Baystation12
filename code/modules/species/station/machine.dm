@@ -11,6 +11,10 @@
 	and dedicated workers, albeit more than slightly inhuman in outlook and perspective."
 	cyborg_noun = null
 
+	meat_type = null
+	bone_material = null
+	skin_material = null
+
 	preview_icon = 'icons/mob/human_races/species/ipc/preview.dmi'
 
 	unarmed_types = list(/datum/unarmed_attack/punch, /datum/unarmed_attack/kick, /datum/unarmed_attack/stomp)

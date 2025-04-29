@@ -726,7 +726,7 @@
 				/obj/item/reagent_containers/food/snacks/tastybread,
 				/obj/item/reagent_containers/food/snacks/proteinbar,
 				/obj/item/reagent_containers/food/snacks/syndicake,
-				/obj/item/reagent_containers/food/snacks/donut,
+				/obj/item/reagent_containers/food/snacks/donut/normal,
 				/obj/item/reagent_containers/food/snacks/donut/cherryjelly,
 				/obj/item/reagent_containers/food/snacks/donut/jelly,
 				/obj/item/pizzabox/meat,
@@ -737,6 +737,20 @@
 				/obj/item/reagent_containers/food/snacks/plumphelmetbiscuit,
 				/obj/item/reagent_containers/food/snacks/skrellsnacks)
 
+/obj/random/donut
+	name = "random donut"
+	desc = "This is a random donut."
+	icon = 'icons/obj/food/food.dmi'
+	icon_state = "donut"
+
+/obj/random/donut/spawn_choices()
+	return list(/obj/item/reagent_containers/food/snacks/donut/normal = 10,
+				/obj/item/reagent_containers/food/snacks/donut/normal/frosted = 10,
+				/obj/item/reagent_containers/food/snacks/donut/jelly = 1,
+				/obj/item/reagent_containers/food/snacks/donut/jelly/frosted = 1,
+				/obj/item/reagent_containers/food/snacks/donut/cherryjelly = 1,
+				/obj/item/reagent_containers/food/snacks/donut/cherryjelly/frosted = 1
+				)
 
 /obj/random/storage
 	name = "random storage item"

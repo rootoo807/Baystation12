@@ -59,6 +59,8 @@
 	blood_color = "#2299fc"
 	flesh_color = "#808d11"
 
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/human/vox
+
 	maneuvers = list(/singleton/maneuver/leap/grab)
 	standing_jump_range = 5
 

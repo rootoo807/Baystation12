@@ -69,8 +69,8 @@
 
 /datum/reagent/nutriment/protein // Bad for Skrell!
 	name = "Animal Protein"
-	taste_description = "some sort of protein"
-	color = "#440000"
+	taste_description = "meat"
+	color = "#8f2222"
 	protein_amount = 1
 
 /datum/reagent/nutriment/protein/adjust_nutrition(mob/living/carbon/M, removed)
@@ -83,22 +83,22 @@
 /datum/reagent/nutriment/protein/cheese
 	name = "Cheese Protein"
 	taste_description = "cheese"
-	color = "#b7c616"
+	color = "#f3ce3b"
 
 /datum/reagent/nutriment/protein/fish
 	name = "Fish Protein"
 	taste_description = "fish"
-	color = "#9d9e94"
+	color = "#ff9191"
 
 /datum/reagent/nutriment/protein/shellfish
 	name = "Shellfish Protein"
 	taste_description = "shellfish"
-	color = "#f6db93"
+	color = "#ffb79e"
 
 /datum/reagent/nutriment/protein/egg // Also bad for skrell.
-	name = "egg yolk"
+	name = "Egg Yolk"
 	taste_description = "egg"
-	color = "#ffffaa"
+	color = "#f8ca29"
 
 	condiment_icon_state = "eggyolk"
 	condiment_name = "egg yolk carton"
@@ -107,17 +107,17 @@
 //vegetamarian alternative that is safe for skrell to ingest//rewired it from its intended nutriment/protein/egg/softtofu because it would not actually work, going with plan B, more recipes.
 
 /datum/reagent/nutriment/softtofu
-	name = "plant protein"
+	name = "Plant Protein"
 	description = "A gooey pale bean paste."
-	taste_description = "healthy sadness"
-	color = "#ffffff"
+	taste_description = "tofu"
+	color = "#fcfe97"
 
 /datum/reagent/nutriment/honey
 	name = "Honey"
 	description = "A golden yellow syrup, loaded with sugary sweetness."
 	taste_description = "sweetness"
 	nutriment_factor = 10
-	color = "#ffff00"
+	color = "#f6cd26"
 	sugar_amount = 1
 
 	condiment_icon_state = "honey"
@@ -125,7 +125,7 @@
 	condiment_desc = "A jar of sweet and viscous honey."
 
 /datum/reagent/nutriment/flour
-	name = "flour"
+	name = "Flour"
 	description = "This is what you rub all over yourself to pretend to be a ghost."
 	taste_description = "chalky wheat"
 	reagent_state = SOLID
@@ -150,7 +150,7 @@
 	taste_description = "bready goodness"
 	reagent_state = LIQUID
 	taste_mult = 0.2
-	nutriment_factor = 3
+	nutriment_factor = 5
 	color = "#ffd592"
 	protein_amount = 0.4
 
@@ -161,7 +161,6 @@
 /datum/reagent/nutriment/batter/soy
 	name = "Soy Batter"
 	description = "A gooey mixture of tofu and flour, a base for turning soy into food."
-	taste_description = "tofu goodness?"
 	protein_amount = 0
 
 /datum/reagent/nutriment/batter/touch_turf(turf/simulated/T)
@@ -177,7 +176,6 @@
 	description = "A gooey mixture of eggs, flour and sugar, an important precursor to cake!"
 	taste_description = "sweetness"
 	color = "#ffe992"
-	nutriment_factor = 5
 	taste_mult = 0.3
 	protein_amount = 0.3
 	sugar_amount = 0.3
@@ -227,7 +225,7 @@
 /datum/reagent/nutriment/coco
 	name = "Cocoa Powder"
 	description = "A fatty, bitter paste made from cocoa beans."
-	taste_description = "bitterness"
+	taste_description = "chocolate"
 	taste_mult = 1.3
 	reagent_state = SOLID
 	nutriment_factor = 5
@@ -268,7 +266,7 @@
 	color = "#c07c40"
 
 /datum/reagent/nutriment/soysauce
-	name = "Soysauce"
+	name = "Soy Sauce"
 	description = "A salty sauce made from the soy plant."
 	taste_description = "umami"
 	taste_mult = 1.1
@@ -322,7 +320,7 @@
 	taste_description = "rice"
 	taste_mult = 0.4
 	reagent_state = SOLID
-	nutriment_factor = 1
+	nutriment_factor = 5
 	color = "#ffffff"
 
 	condiment_icon_state = "rice"
@@ -335,7 +333,7 @@
 	taste_description = "green tea and rice"
 	taste_mult = 0.4
 	reagent_state = LIQUID
-	nutriment_factor = 1
+	nutriment_factor = 5
 	color = "#f1ffdb"
 
 /datum/reagent/nutriment/cherryjelly
@@ -354,7 +352,7 @@
 /datum/reagent/nutriment/cornoil
 	name = "Corn Oil"
 	description = "An oil derived from various types of corn."
-	taste_description = "slime"
+	taste_description = "corn"
 	taste_mult = 0.1
 	reagent_state = LIQUID
 	nutriment_factor = 20
@@ -394,6 +392,7 @@
 	description = "Also known as Mentha."
 	taste_description = "sweet mint"
 	reagent_state = LIQUID
+	nutriment_factor = 1
 	color = "#07aab2"
 
 	condiment_icon_state = "mint_syrup"
@@ -656,7 +655,7 @@
 /datum/reagent/nutriment/almondmeal
 	name = "Almond Meal"
 	description = "Finely ground almonds."
-	taste_description = "nuts"
+	taste_description = "almond"
 	reagent_state = SOLID
 	color = "#c9a275"
 	taste_mult = 2
@@ -684,3 +683,17 @@
 
 	condiment_name = "bottle of space spice"
 	condiment_icon_state = "spacespicebottle"
+
+/datum/reagent/nutriment/sweet_chili
+	name = "Sweet Chili Sauce"
+	description = "Spicy AND sweet!"
+	reagent_state = LIQUID
+	color = "#dd4103"
+	taste_description = "sweet chili"
+	nutriment_factor = 1
+	taste_mult = 1.5
+	value = 0.2
+
+	condiment_name = "sweet chili"
+	condiment_desc = "Sweet chili sauce, for those who want spicy food but are afraid to commit."
+	condiment_icon_state = "sweet_chili"

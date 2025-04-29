@@ -18,6 +18,7 @@
 
 	skin_material = MATERIAL_SKIN_CHITIN
 	bone_material = null
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/human/nabber
 	speech_sounds = list('sound/voice/Bug.ogg')
 	speech_chance = 2
 

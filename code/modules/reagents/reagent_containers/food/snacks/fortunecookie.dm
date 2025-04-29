@@ -20,6 +20,12 @@ GLOBAL_LIST_AS(fortune_cookie_default_fortunes, list(
 	filling_color = "#e8e79e"
 	center_of_mass = "x=15;y=14"
 	bitesize = 2
+	default_reagents = list(
+		/datum/reagent/sugar = 5,
+		/datum/reagent/nutriment/protein/egg = 0.33
+		)
+	additional_reagents = list(/datum/reagent/nutriment = 3)
+	additional_reagents_data = list(/datum/reagent/nutriment = list("crunchy cookie" = 3))
 
 	/// The paper fortune contained inside the cookie. Set during `Initialize()`.
 	var/obj/item/paper/fortune

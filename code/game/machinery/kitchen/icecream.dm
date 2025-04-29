@@ -194,7 +194,8 @@
 	layer = ABOVE_OBJ_LAYER
 	bitesize = 3
 	volume = 20
-	nutriment_amt = 5
+	default_reagents = list(/datum/reagent/nutriment = 5)
+	default_reagents_data = list(/datum/reagent/nutriment = list("waffle cone" = 5))
 
 	var/ice_creamed = 0
 	var/cone_type

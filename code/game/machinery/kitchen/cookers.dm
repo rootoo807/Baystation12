@@ -213,8 +213,6 @@
 	if (source.reagents && source.reagents.total_volume)
 		source.reagents.trans_to(result, source.reagents.total_volume)
 	var/flags = cook_modes[cook_mode]["flags"] || 0
-	for (var/hint in source.nutriment_desc)
-		result.nutriment_desc[hint] = source.nutriment_desc[hint]
 	result.combined_names = source.combined_names?.Copy()
 	result.cooked_with = source.cooked_with?.Copy()
 	LAZYADD(result.cooked_with, cook_mode)
@@ -460,6 +458,13 @@
 			"desc" = "made into a donut",
 			"color" = null,
 			"flags" = COOKER_STRIP_RAW
+		),
+		"Macaron" = list(
+			"type" = /obj/item/reagent_containers/food/snacks/variable/macaron,
+			"suffix" = "macaron",
+			"desc" = "made into a macaron",
+			"color" = null,
+			"flags" = COOKER_STRIP_RAW
 		)
 	)
 
@@ -529,15 +534,22 @@
 	icon_state = "pizza"
 	slice_path = /obj/item/reagent_containers/food/snacks/slice/variable/pizza
 	slices_num = 6
-	nutriment_amt = 15
-	nutriment_desc = list("pizza crust" = 8, "cheese" = 7)
-
+	additional_reagents = list(
+		/datum/reagent/nutriment = 8,
+		/datum/reagent/nutriment/protein/cheese = 7
+		)
+	additional_reagents_data = list(/datum/reagent/nutriment = list("pizza crust" = 8))
 
 /obj/item/reagent_containers/food/snacks/slice/variable/pizza
 	name = "pizza slice"
 	desc = "A tasty slice of pizza."
 	icon_state = "pizza_slice"
 	whole_path = /obj/item/reagent_containers/food/snacks/sliceable/variable/pizza
+	default_reagents = list(
+		/datum/reagent/nutriment = 1.33,
+		/datum/reagent/nutriment/protein/cheese = 1.16
+		)
+	default_reagents_data = list(/datum/reagent/nutriment = list("pizza crust" = 2))
 
 
 /obj/item/reagent_containers/food/snacks/sliceable/variable/bread
@@ -545,22 +557,24 @@
 	desc = "Tasty bread."
 	icon_state = "breadcustom"
 	slice_path = /obj/item/reagent_containers/food/snacks/slice/variable/bread
-	nutriment_amt = 6
-	nutriment_desc = list("bread" = 6)
+	additional_reagents = list(/datum/reagent/nutriment = 6)
+	additional_reagents_data = list(/datum/reagent/nutriment = list("bread" = 6))
 
 /obj/item/reagent_containers/food/snacks/slice/variable/bread
 	name = "bread slice"
 	desc = "A tasty slice of bread."
 	icon_state = "breadcustom_slice"
 	whole_path = /obj/item/reagent_containers/food/snacks/sliceable/variable/bread
+	default_reagents = list(/datum/reagent/nutriment = 1)
+	default_reagents_data = list(/datum/reagent/nutriment = list("bread" = 1))
 
 
 /obj/item/reagent_containers/food/snacks/variable/pie
 	name = "pie"
 	desc = "Tasty pie."
 	icon_state = "piecustom"
-	nutriment_amt = 4
-	nutriment_desc = list("pie" = 4)
+	additional_reagents = list(/datum/reagent/nutriment = 4)
+	additional_reagents_data = list(/datum/reagent/nutriment = list("pie" = 4))
 
 
 /obj/item/reagent_containers/food/snacks/sliceable/variable/cake
@@ -568,9 +582,8 @@
 	desc = "A popular band."
 	icon_state = "cakecustom"
 	slice_path = /obj/item/reagent_containers/food/snacks/slice/variable/cake
-	nutriment_amt = 15
-	nutriment_desc = list("cake" = 8, "sweetness" = 7)
-
+	additional_reagents = list(/datum/reagent/nutriment = 15)
+	additional_reagents_data = list(/datum/reagent/nutriment = list("cake" = 8, "sweetness" = 7))
 
 /obj/item/reagent_containers/food/snacks/slice/variable/cake
 	name = "cake slice"
@@ -578,22 +591,24 @@
 	icon_state = "cakecustom_slice"
 	whole_path = /obj/item/reagent_containers/food/snacks/sliceable/variable/cake
 	trash = /obj/item/trash/plate
+	default_reagents = list(/datum/reagent/nutriment = 3)
+	default_reagents_data = list(/datum/reagent/nutriment = list("cake" = 1.6, "sweetness" = 1.4))
 
 
 /obj/item/reagent_containers/food/snacks/variable/pocket
 	name = "hot pocket"
 	desc = "You wanna put a bangin- oh, nevermind."
 	icon_state = "donk"
-	nutriment_amt = 2
-	nutriment_desc = list("heartiness" = 1,"dough" = 2)
+	additional_reagents = list(/datum/reagent/nutriment = 2)
+	additional_reagents_data = list(/datum/reagent/nutriment = list("heartiness" = 1,"dough" = 2))
 
 
 /obj/item/reagent_containers/food/snacks/variable/kebab
 	name = "kebab"
 	desc = "Remove this!"
 	icon_state = "kabob"
-	nutriment_amt = 3
-	nutriment_desc = list("kebab" = 3)
+	additional_reagents = list(/datum/reagent/nutriment = 3)
+	additional_reagents_data = list(/datum/reagent/nutriment = list("kebab" = 3))
 
 
 /obj/item/reagent_containers/food/snacks/variable/waffles
@@ -601,9 +616,9 @@
 	desc = "Made with love."
 	icon_state = "waffles"
 	gender = PLURAL
-	nutriment_amt = 4
-	nutriment_desc = list("waffle" = 4)
 	trash = /obj/item/trash/waffles
+	additional_reagents = list(/datum/reagent/nutriment = 4)
+	additional_reagents_data = list(/datum/reagent/nutriment = list("waffle" = 4))
 
 
 /obj/item/reagent_containers/food/snacks/variable/pancakes
@@ -611,17 +626,17 @@
 	desc = "How does an oven make pancakes?"
 	icon_state = "pancakescustom"
 	gender = PLURAL
-	nutriment_amt = 4
-	nutriment_desc = list("pancake" = 4)
 	trash = /obj/item/trash/plate
+	additional_reagents = list(/datum/reagent/nutriment = 4)
+	additional_reagents_data = list(/datum/reagent/nutriment = list("pancake" = 4))
 
 
 /obj/item/reagent_containers/food/snacks/variable/cookie
 	name = "cookie"
 	desc = "Sugar snap!"
 	icon_state = "cookie"
-	nutriment_amt = 3
-	nutriment_desc = list("sweetness" = 1, "cookie" = 2)
+	additional_reagents = list(/datum/reagent/nutriment = 3)
+	additional_reagents_data = list(/datum/reagent/nutriment = list("sweetness" = 1, "cookie" = 2))
 
 
 /obj/item/reagent_containers/food/snacks/donut/variable
@@ -629,49 +644,58 @@
 	desc = "Donut eat this!"
 	icon = 'icons/obj/food/food_custom.dmi'
 	icon_state = "donut"
-	nutriment_amt = 2
-	nutriment_desc = list("donut" = 2)
+	additional_reagents = list(/datum/reagent/nutriment = 2)
+	additional_reagents_data = list(/datum/reagent/nutriment = list("donut" = 2))
+
+
+/obj/item/reagent_containers/food/snacks/variable/macaron
+	name = "macaron"
+	desc = "A fluffy, brittle, sweet macaron."
+	icon_state = "macaron"
+	w_class = ITEM_SIZE_TINY
+	bitesize = 6
+	additional_reagents = list(/datum/reagent/nutriment = 2)
+	additional_reagents_data = list(/datum/reagent/nutriment = list("sweetness" = 2))
 
 
 /obj/item/reagent_containers/food/snacks/variable/jawbreaker
 	name = "flavored jawbreaker"
 	desc = "It's like cracking a molar on a rainbow."
 	icon_state = "jawbreaker"
-	nutriment_amt = 2
-	nutriment_desc = list("a toothache" = 1, "sweetness" = 1)
+	additional_reagents = list(/datum/reagent/sugar = 2)
+	additional_reagents_data = list(/datum/reagent/sugar = list("a toothache" = 1, "sweetness" = 1))
 
 
 /obj/item/reagent_containers/food/snacks/variable/candybar
 	name = "flavored chocolate bar"
 	desc = "Made in a factory downtown."
 	icon_state = "bar"
-	nutriment_amt = 2
-	nutriment_desc = list("chocolate" = 2)
+	additional_reagents = list(/datum/reagent/nutriment/coco = 2)
 
 
 /obj/item/reagent_containers/food/snacks/variable/sucker
 	name = "flavored sucker"
 	desc = "Suck, suck, suck."
 	icon_state = "sucker"
-	nutriment_amt = 2
-	nutriment_desc = list("sweetness" = 2)
+	additional_reagents = list(/datum/reagent/sugar = 2)
+	additional_reagents_data = list(/datum/reagent/sugar = list("sweetness" = 2))
 
 
 /obj/item/reagent_containers/food/snacks/variable/jelly
 	name = "jelly"
 	desc = "All your friends will be jelly."
 	icon_state = "jellycustom"
-	nutriment_amt = 3
-	nutriment_desc = list("sweetness" = 3)
 	trash = /obj/item/trash/snack_bowl
+	additional_reagents = list(/datum/reagent/sugar = 3)
+	additional_reagents_data = list(/datum/reagent/sugar = list("sweetness" = 3))
 
 
 /obj/item/reagent_containers/food/snacks/variable/stuffing
 	name = "stuffing"
 	desc = "Get stuffed."
 	icon_state = "stuffing"
-	nutriment_amt = 3
-	nutriment_desc = list("stuffing" = 3)
+	additional_reagents = list(/datum/reagent/nutriment = 3)
+	additional_reagents_data = list(/datum/reagent/nutriment = list("stuffing" = 3))
 
 
 /obj/item/reagent_containers/food/snacks/variable/shreds
@@ -679,13 +703,14 @@
 	desc = "Gnarly."
 	icon_state = "shreds" //NB: there is no base icon state and that is intentional
 
+
 /obj/item/reagent_containers/food/snacks/variable/stew
 	name = "stew"
 	desc = "A hearty classic."
 	icon_state = "stew"
-	nutriment_amt = 4
-	nutriment_desc = list("stew" = 3)
 	trash = /obj/item/trash/pot
+	additional_reagents = list(/datum/reagent/nutriment = 4)
+	additional_reagents_data = list(/datum/reagent/nutriment = list("stew" = 4))
 
 
 /obj/item/material/chopping_board
@@ -715,8 +740,6 @@
 		var/obj/item/reagent_containers/food/snacks/variable/result = new (get_turf(src))
 		if (source.reagents?.total_volume)
 			source.reagents.trans_to(result, source.reagents.total_volume)
-		for (var/hint in source.nutriment_desc)
-			result.nutriment_desc[hint] = source.nutriment_desc[hint]
 		result.combined_names = source.combined_names?.Copy()
 		result.cooked_with = source.cooked_with?.Copy()
 		result.icon = source.icon
@@ -774,10 +797,6 @@
 		if (reagents.maximum_volume < volume)
 			reagents.maximum_volume = volume
 		other.reagents.trans_to(src, volume)
-	for (var/hint in other.nutriment_desc)
-		if (!nutriment_desc[hint])
-			nutriment_desc[hint] = 0
-		nutriment_desc[hint] += other.nutriment_desc[hint]
 	bitesize += (other.bitesize - other.bitecount)
 	var/image/I = image(other.icon, other.icon_state)
 	I.appearance_flags = DEFAULT_APPEARANCE_FLAGS | RESET_COLOR

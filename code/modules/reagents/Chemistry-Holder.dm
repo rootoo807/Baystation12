@@ -267,7 +267,7 @@ GLOBAL_TYPED_NEW(temp_reagents_holder, /obj)
 
 /datum/reagents/proc/get_reagent_amount(reagent_type, allow_subtypes)
 	for (var/datum/reagent/current in reagent_list)
-		if(current.type == reagent_type)
+		if (current.type == reagent_type)
 			return current.volume
 	return 0
 

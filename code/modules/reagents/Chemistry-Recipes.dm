@@ -1542,6 +1542,13 @@
 	result_amount = 2
 	mix_message = "The solution thickens into a creamy white oil."
 
+/singleton/reaction/sweet_chili
+	name = "Sweet Chili Sauce"
+	result = /datum/reagent/nutriment/sweet_chili
+	required_reagents = list(/datum/reagent/sugar = 1, /datum/reagent/capsaicin = 1)
+	result_amount = 2
+	mix_message = "The solution thickens into a sweet, spicy red sauce."
+
 /singleton/reaction/cheesewheel
 	name = "Cheesewheel"
 	result = null
@@ -2878,7 +2885,7 @@
 /singleton/reaction/kzkzaa
 	name = "Kzkzaa"
 	result = /datum/reagent/drink/kzkzaa
-	required_reagents = list(/datum/reagent/drink/unathijuice = 2, /datum/reagent/nutriment/protein = 1)
+	required_reagents = list(/datum/reagent/drink/unathijuice = 2, /datum/reagent/nutriment/protein/fish = 1)
 	result_amount = 3
 	mix_message = "The mixture turns a deep orange."
 
@@ -3028,8 +3035,8 @@
 /singleton/reaction/caesar
 	name = "Caesar"
 	result = /datum/reagent/ethanol/caesar
-	required_reagents = list(/datum/reagent/ethanol/vodka = 2, /datum/reagent/drink/juice/tomato = 1, /datum/reagent/capsaicin = 1)
-	result_amount = 4
+	required_reagents = list(/datum/reagent/ethanol/vodka = 2, /datum/reagent/drink/juice/tomato = 1, /datum/reagent/capsaicin = 1, /datum/reagent/nutriment/protein/shellfish = 1)
+	result_amount = 5
 
 /singleton/reaction/caipirinha
 	name = "Caipirinha"

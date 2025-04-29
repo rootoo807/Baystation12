@@ -80,6 +80,7 @@
 	name = "Farwa"
 	name_plural = "Farwa"
 	health_hud_intensity = 2
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/monkey/farwa
 
 	icobase = 'icons/mob/human_races/species/monkey/farwa_body.dmi'
 	deform = 'icons/mob/human_races/species/monkey/farwa_body.dmi'
@@ -97,6 +98,7 @@
 	name = "Neaera"
 	name_plural = "Neaera"
 	health_hud_intensity = 1.75
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/monkey/neaera
 
 	icobase = 'icons/mob/human_races/species/monkey/neaera_body.dmi'
 	deform = 'icons/mob/human_races/species/monkey/neaera_body.dmi'
@@ -116,6 +118,7 @@
 	name = "Stok"
 	name_plural = "Stok"
 	health_hud_intensity = 1.5
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/monkey/stok
 
 	icobase = 'icons/mob/human_races/species/monkey/stok_body.dmi'
 	deform = 'icons/mob/human_races/species/monkey/stok_body.dmi'

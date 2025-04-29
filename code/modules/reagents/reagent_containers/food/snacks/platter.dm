@@ -5,8 +5,6 @@
 	desc = "If you're seeing this, something has gone wrong D:"
 	icon_state = "puffpuffbowl_full"
 	trash = /obj/item/trash/snack_bowl
-	nutriment_amt = 24
-	nutriment_desc = list("fried nothing" = 24)
 	bitesize = 4
 	var/vendingobject = /obj/item/reagent_containers/food/snacks/puffpuff
 	var/unitname = "contained_food"
@@ -44,16 +42,20 @@
 	icon_state = "puffpuffbowl_full"
 	filling_color = "#bb8a41"
 	bitesize = 4
-	nutriment_amt = 24
-	nutriment_desc = list("fried dough" = 24)
+	default_reagents = list(
+		/datum/reagent/spacespice = 2,
+		/datum/reagent/sodiumchloride = 1)
+	default_reagents_data = list(/datum/reagent/spacespice = list("ginger" = 2))
+	additional_reagents = list(/datum/reagent/nutriment = 24)
+	additional_reagents_data = list(/datum/reagent/nutriment = list("fried dough" = 24))
 	vendingobject = /obj/item/reagent_containers/food/snacks/puffpuff
 	unitname = "puff-puff"
 
 /obj/item/reagent_containers/food/snacks/platter/puffpuffs/on_update_icon()
 	switch(reagents.total_volume)
-		if(1 to 8)
+		if(1 to 12)
 			icon_state = "puffpuffbowl_few"
-		if(9 to INFINITY)
+		if(13 to INFINITY)
 			icon_state = "puffpuffbowl_full"
 
 
@@ -63,26 +65,39 @@
 	icon_state = "puffpuff"
 	filling_color = "#bb8a41"
 	bitesize = 2
+	default_reagents = list(
+		/datum/reagent/spacespice = 0.3,
+		/datum/reagent/sodiumchloride = 0.15,
+		/datum/reagent/nutriment = 3.5)
+	default_reagents_data = list(
+		/datum/reagent/spacespice = list("ginger" = 2),
+		/datum/reagent/nutriment = list("fried dough" = 24)
+		)
 
 
 /obj/item/reagent_containers/food/snacks/platter/latkes
 	name = "latke platter"
 	desc = "A plate of crispy potato pancakes. Get them while they're hot!"
 	icon_state = "latkes_full"
+	trash = /obj/item/trash/plate
 	filling_color = "#e88d17"
 	bitesize = 4
-	nutriment_amt = 12
-	nutriment_desc = list("crispy fried potato" = 12)
+	default_reagents = list(
+		/datum/reagent/drink/juice/potato = 9,
+		/datum/reagent/nutriment/protein/egg = 3
+		)
+	additional_reagents = list(/datum/reagent/nutriment = 12)
+	additional_reagents_data = list(/datum/reagent/nutriment = list("crispy goodness" = 12))
 	vendingobject = /obj/item/reagent_containers/food/snacks/latke
 	unitname = "latke"
 
 /obj/item/reagent_containers/food/snacks/platter/latkes/on_update_icon()
 	switch(reagents.total_volume)
-		if(1 to 3)
+		if(1 to 4)
 			icon_state = "latkes_few"
-		if(4 to 6)
+		if(4 to 12)
 			icon_state = "latkes_some"
-		if(7 to INFINITY)
+		if(13 to INFINITY)
 			icon_state = "latkes_full"
 
 
@@ -92,3 +107,122 @@
 	icon_state = "latke"
 	filling_color = "#e88d17"
 	bitesize = 2
+	default_reagents = list(
+		/datum/reagent/drink/juice/potato = 1.5,
+		/datum/reagent/nutriment/protein/egg = 0.5,
+		/datum/reagent/nutriment = 2
+		)
+	default_reagents_data = list(/datum/reagent/nutriment = list("crispy goodness" = 2))
+
+
+/obj/item/reagent_containers/food/snacks/platter/mozzarella_sticks
+	name = "mozzarella sticks"
+	gender = PLURAL
+	desc = "Fried sticks of molten mozzarrella cheese hidden in a deep fried breaded coating."
+	icon_state = "mozzarella_sticks_full"
+	trash = /obj/item/trash/plate
+	filling_color = "#fabe17"
+	bitesize = 3
+	default_reagents = list(
+		/datum/reagent/nutriment/batter = 10,
+		/datum/reagent/nutriment/protein/cheese = 8)
+	default_reagents_data = list(/datum/reagent/nutriment/protein/cheese = list("fresh cheese" = 8))
+	vendingobject = /obj/item/reagent_containers/food/snacks/mozzarella_stick
+	unitname = "mozzarella stick"
+
+/obj/item/reagent_containers/food/snacks/platter/mozzarella_sticks/on_update_icon()
+	switch(reagents.total_volume)
+		if(1 to 9)
+			icon_state = "mozzarella_sticks_half"
+		if(10 to INFINITY)
+			icon_state = "mozzarella_sticks_full"
+
+
+/obj/item/reagent_containers/food/snacks/mozzarella_stick
+	name = "mozzarella stick"
+	desc = "A cheese stick by any other name would taste as savory."
+	icon_state = "mozzarella_stick"
+	filling_color = "#fabe17"
+	bitesize = 2
+	default_reagents = list(
+		/datum/reagent/nutriment/batter = 1.6,
+		/datum/reagent/nutriment/protein/cheese = 1.4)
+	default_reagents_data = list(/datum/reagent/nutriment/protein/cheese = list("fresh cheese" = 2))
+
+
+/obj/item/reagent_containers/food/snacks/platter/eggrolls_vegetable
+	name = "vegetable eggrolls"
+	gender = PLURAL
+	desc = "Fried, crispy eggrolls full of carrots, cabbage and ginger."
+	icon_state = "eggrolls_veg_full"
+	filling_color = "#b19445"
+	trash = /obj/item/trash/plate
+	bitesize = 6
+	default_reagents = list(
+		/datum/reagent/drink/juice/carrot = 10,
+		/datum/reagent/imidazoline = 5,
+		/datum/reagent/nutriment/protein/egg = 3
+		)
+	additional_reagents = list(/datum/reagent/nutriment = 6)
+	additional_reagents_data = list(/datum/reagent/nutriment = list("crunchy coating" = 4, "ginger" = 2))
+	vendingobject = /obj/item/reagent_containers/food/snacks/eggroll_vegetable
+	unitname = "eggroll"
+
+/obj/item/reagent_containers/food/snacks/platter/eggrolls_vegetable/on_update_icon()
+	switch(reagents.total_volume)
+		if(1 to 6)
+			icon_state = "eggrolls_veg_one"
+		if(7 to INFINITY)
+			icon_state = "eggrolls_veg_full"
+
+/obj/item/reagent_containers/food/snacks/eggroll_vegetable
+	name = "vegetable eggroll"
+	desc = "A crunchy eggroll full of crispy veggies."
+	icon_state = "eggroll_veg"
+	filling_color = "#b19445"
+	bitesize = 3
+	default_reagents = list(
+		/datum/reagent/drink/juice/carrot = 2.5,
+		/datum/reagent/imidazoline = 1.25,
+		/datum/reagent/nutriment/protein/egg = 0.75,
+		/datum/reagent/nutriment = 1.5
+		)
+	default_reagents_data = list(/datum/reagent/nutriment = list("crunchy coating" = 2, "ginger" = 1))
+
+
+/obj/item/reagent_containers/food/snacks/platter/eggrolls_meat
+	name = "meat eggrolls"
+	gender = PLURAL
+	desc = "Fried, crispy eggrolls full of meat, traditionally either pork or chicken, although other kinds exist around human space depending on local availability."
+	icon_state = "eggrolls_meat_full"
+	filling_color = "#613e16"
+	trash = /obj/item/trash/plate
+	bitesize = 5
+	default_reagents = list(
+		/datum/reagent/nutriment/protein = 7,
+		/datum/reagent/nutriment/protein/egg = 3
+		)
+	additional_reagents = list(/datum/reagent/nutriment = 10)
+	additional_reagents_data = list(/datum/reagent/nutriment = list("crunchy coating" = 6, "ginger" = 4))
+	vendingobject = /obj/item/reagent_containers/food/snacks/eggroll_meat
+	unitname = "eggroll"
+
+/obj/item/reagent_containers/food/snacks/platter/eggrolls_meat/on_update_icon()
+	switch(reagents.total_volume)
+		if(1 to 5)
+			icon_state = "eggrolls_meat_one"
+		if(6 to INFINITY)
+			icon_state = "eggrolls_meat_full"
+
+/obj/item/reagent_containers/food/snacks/eggroll_meat
+	name = "meat eggroll"
+	desc = "A crunchy eggroll full of meat and ginger."
+	icon_state = "eggroll_meat"
+	filling_color = "#613e16"
+	bitesize = 3
+	default_reagents = list(
+		/datum/reagent/nutriment/protein = 1.75,
+		/datum/reagent/nutriment/protein/egg = 0.75,
+		/datum/reagent/nutriment = 2.5
+		)
+	default_reagents_data = list(/datum/reagent/nutriment = list("crunchy coating" = 2, "ginger" = 1))

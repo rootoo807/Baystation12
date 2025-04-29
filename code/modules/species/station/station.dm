@@ -107,7 +107,7 @@
 	the secrets of their empire to their allies."
 	assisted_langs = list(LANGUAGE_NABBER)
 	health_hud_intensity = 1.75
-	meat_type = /obj/item/reagent_containers/food/snacks/fish/octopus
+	meat_type = /obj/item/reagent_containers/food/snacks/meat/human/skrell
 	bone_material = MATERIAL_BONE_CARTILAGE
 	genders = list(PLURAL)
 	pronouns = list(PRONOUNS_THEY_THEM)
@@ -271,6 +271,7 @@
 	assisted_langs = list(LANGUAGE_NABBER)
 	spawns_with_stack = 0
 	health_hud_intensity = 2
+	meat_type = /mob/living/carbon/alien/diona
 	hunger_factor = 3
 	thirst_factor = 0.01
 

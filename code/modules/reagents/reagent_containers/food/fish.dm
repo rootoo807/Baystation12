@@ -7,6 +7,7 @@
 	filling_color = "#ff4040"
 	center_of_mass = "x=17;y=13"
 	bitesize = 6
+	default_reagents = list(/datum/reagent/nutriment/protein/fish = 6)
 	var/fish_type = "fish"
 
 
@@ -14,9 +15,8 @@
 	. = ..()
 	if (. == INITIALIZE_HINT_QDEL)
 		return
-	reagents.add_reagent(/datum/reagent/nutriment/protein/fish, 6)
 	name = "[fish_type] fillet"
-
+	default_reagents_data = list(/datum/reagent/nutriment/protein/fish = list("[fish_type]"= 6))
 
 /obj/item/reagent_containers/food/snacks/fish/use_tool(obj/item/item, mob/living/user, list/click_params)
 	if (istype(item, /obj/item/reagent_containers/syringe) || !item.sharp)
@@ -55,35 +55,31 @@
 	fish_type = "space carp"
 	color = "#e657aa"
 	filling_color = "#e657aa"
-
-
-/obj/item/reagent_containers/food/snacks/fish/space_carp/Initialize()
-	. = ..()
-	reagents.add_reagent(/datum/reagent/toxin/carpotoxin, 6)
+	default_reagents = list(
+		/datum/reagent/nutriment/protein/fish = 6,
+		/datum/reagent/toxin/carpotoxin = 6
+		)
 
 
 /obj/item/reagent_containers/food/snacks/fish/space_pike
 	fish_type = "space pike"
 	color = "#f73fd6"
 	filling_color = "#f73fd6"
-
-
-/obj/item/reagent_containers/food/snacks/fish/space_pike/Initialize()
-	. = ..()
-	reagents.add_reagent(/datum/reagent/toxin/carpotoxin, 11)
+	default_reagents = list(
+		/datum/reagent/nutriment/protein/fish = 6,
+		/datum/reagent/toxin/carpotoxin = 11
+		)
 
 
 /obj/item/reagent_containers/food/snacks/fish/space_shark
 	fish_type = "cosmoshark"
 	color = "#8925d4"
 	filling_color = "#8925d4"
-
-
-/obj/item/reagent_containers/food/snacks/fish/space_shark/Initialize()
-	. = ..()
-	reagents.add_reagent(/datum/reagent/nutriment/protein, 5)
-	reagents.add_reagent(/datum/reagent/drugs/hextro, 1)
-	reagents.add_reagent(/datum/reagent/toxin/phoron, 1)
+	default_reagents = list(
+		/datum/reagent/nutriment/protein/fish = 6,
+		/datum/reagent/drugs/hextro = 1,
+		/datum/reagent/toxin/phoron = 1
+		)
 
 
 /obj/item/reagent_containers/food/snacks/fish/cod

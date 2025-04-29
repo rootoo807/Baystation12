@@ -68,10 +68,13 @@
 
 /obj/item/trash/snack_bowl
 	name = "snack bowl"
-	icon_state	= "snack_bowl"
+	icon_state = "snack_bowl"
 
 /obj/item/trash/snack_bowl/blue
-	icon_state	= "snack_bowl_blue"
+	icon_state = "snack_bowl_blue"
+
+/obj/item/trash/snack_bowl/small
+	icon_state = "snack_bowl_small"
 
 /obj/item/trash/pistachios
 	name = "pistachios pack"
